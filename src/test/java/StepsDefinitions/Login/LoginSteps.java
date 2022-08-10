@@ -1,4 +1,4 @@
-package StepsDefinitions;
+package StepsDefinitions.Login;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
@@ -17,18 +17,18 @@ public class LoginSteps {
     }
     @Given("quiero acceder al sitio")
     public void quiero_acceder_al_sitio() {
-        loginPage.visitarSitio("url_cliente");
+        loginPage.visitarSitio("http://certificacion.qaandain.oneapp.cl/admin");
     }
 
 
     @When("Ingreso mis credenciales y doy clic en ingresar")
     public void ingreso_mis_credenciales_y_doy_clic_en_ingresar() {
-        loginPage.ingresoCredenciales("user", "pass");
+        loginPage.ingresoCredenciales("admin", "Jolape.2388k");
     }
 
     @Then("permite el acceso a la aplicacion")
     public void permite_el_acceso_a_la_aplicacion() {
-        if (loginPage.verificarNombre("nombre_usuario_acceso")){
+        if (loginPage.verificarNombre("Administrador Full")){
             System.out.println("Prueba correcta");
         }else{
             System.out.println("Prueba fallida");
